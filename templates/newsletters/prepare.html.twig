@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Création de Newsletter{% endblock %}
+
+{% block body %}
+    <h1>Ecrivez votre newsletter</h1>
+    {{form_start(form)}}
+        {{form_row(form.name)}}
+        <p>Contenu</p>
+        <div id="editor"></div>
+        {{form_row(form.content)}}
+        {{form_row(form.categories)}}
+    {{form_end(form)}}
+{% endblock %}
+
+{% block javascripts %}
+    <script src="{{ asset('ckeditor5/ckeditor.js') }}" defer></script>
+    <script src="{{ asset('js/ckeditor.js') }}" defer></script>
+{% endblock %}

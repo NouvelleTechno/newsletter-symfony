@@ -1,0 +1,5 @@
+<h1>Votre inscription</h1>
+
+<p>Vous êtes inscrit(e) à la newsletter</p>
+
+<p>Cliquez sur ce lien <a href="{{ absolute_url(path('newsletters_confirm', {id: user.id, token: token})) }}">{{ absolute_url(path('newsletters_confirm', {id: user.id, token: token})) }}</a></p>
