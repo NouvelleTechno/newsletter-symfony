@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Messages en échec{% endblock %}
+
+{% block body %}
+<h1>Gérer les messages</h1>
+<table>
+    <thead>
+        <tr>
+            <th>id</th>
+            <th>Namespace</th>
+            <th>Newsletter</th>
+            <th>User</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        {% for message in messages %}
+            <tr>
+                <td>{{message.id}}</td>
+                <td>{{message.title}}</td>
+                <td>{{message.message.newsId}}</td>
+                <td>{{message.message.userId}}</td>
+                <td>
+                    <a href="{{ path('newsletters_failed_resend', {id: message.id}) }}">Renvoyer</a>
+                    <a href="{{ path('newsletters_failed_delete', {id: message.id}) }}">Supprimer</a>
+                </td>
+            </tr>
+        {% endfor %}
+    
+    </tbody>
+</table>
+
+{% endblock %}
